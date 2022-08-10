@@ -1,12 +1,19 @@
 import { Link, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faInstagram,
+	faFacebookF,
+	faTwitter,
+	faBehance,
+} from '@fortawesome/free-brands-svg-icons';
 
 function Header({ type }) {
 	return (
 		<header className={type}>
 			<h1>
-				<Link to='/'>LOGO</Link>
+				<Link to='/'>archTec</Link>
 			</h1>
-			<nav>
+			<nav id='gnb'>
 				<ul>
 					<li>
 						<NavLink to='/department'>DEPARTMENT</NavLink>
@@ -28,6 +35,20 @@ function Header({ type }) {
 					</li>
 				</ul>
 			</nav>
+			<ul className='sns'>
+				<li>
+					<FontAwesomeIcon icon={faInstagram} />
+				</li>
+				<li>
+					<FontAwesomeIcon icon={faTwitter} />
+				</li>
+				<li>
+					<FontAwesomeIcon icon={faBehance} />
+				</li>
+				<li>
+					<FontAwesomeIcon icon={faFacebookF} />
+				</li>
+			</ul>
 		</header>
 	);
 }
