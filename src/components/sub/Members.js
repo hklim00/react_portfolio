@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Members() {
-	return <div>Members</div>;
+	return <Layout>Members</Layout>;
 }
 
 export default Members;

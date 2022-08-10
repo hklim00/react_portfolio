@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Location() {
-	return <div>Location</div>;
+	return <Layout>Location</Layout>;
 }
 
 export default Location;
