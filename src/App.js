@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // common
 import Header from './components/common/Header';
@@ -19,11 +19,17 @@ import Youtube from './components/sub/Youtube';
 function App() {
 	return (
 		<>
-			<Header />
-			<Route exact path='/'>
-				<Content />
-				<Visual />
-			</Route>
+			<Switch>
+				<Route exact path='/'>
+					<Header type={'main'} />
+					<Content />
+					<Visual />
+				</Route>
+
+				<Route path='/'>
+					<Header type={'sub'} />
+				</Route>
+			</Switch>
 
 			<Route path='/department' component={Department} />
 			<Route path='/community' component={Community} />
