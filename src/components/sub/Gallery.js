@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 
 function Gallery() {
-	return <Layout>Gallery</Layout>;
+	return <Layout name={'Gallery'}>Gallery</Layout>;
 }
 
 export default Gallery;

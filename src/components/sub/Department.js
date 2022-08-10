@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 
 function Department() {
-	return <Layout>Department</Layout>;
+	return <Layout name={'Department'}>Department</Layout>;
 }
 
 export default Department;

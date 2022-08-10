@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 
 function Community() {
-	return <Layout>Community</Layout>;
+	return <Layout name={'Community'}>Community</Layout>;
 }
 
 export default Community;

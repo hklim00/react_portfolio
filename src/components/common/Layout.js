@@ -1,9 +1,14 @@
 import React from 'react';
 
-function Layout({ children }) {
+function Layout({ children, name }) {
+	const path = process.env.PUBLIC_URL;
+
 	return (
-		<section>
-			<h1>TITLE</h1>
+		<section className={`content ${name}`}>
+			<figure>
+				<img src={`${path}/img/${name}.jpg`} alt='' />
+				<h1>{name}</h1>
+			</figure>
 			<div className='inner'>{children}</div>
 		</section>
 	);
