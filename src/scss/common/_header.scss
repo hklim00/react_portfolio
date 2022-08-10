@@ -6,14 +6,16 @@ header {
 	background: transparent;
 	display: flex;
 	justify-content: space-between;
-	padding-right: 15vw;
 	z-index: 5;
 	h1 {
-		width: 15vw;
+		width: 320px;
 		height: 350px;
 		background: #fff;
 		text-align: center;
 		padding: 50px 0;
+		position: absolute;
+		top: 0;
+		left: 0;
 		a {
 			font-size: 40px;
 			color: #3d3d3d;
@@ -21,6 +23,9 @@ header {
 	}
 	#gnb {
 		height: 130px;
+		max-width: 1280px;
+		width: 100%;
+		margin: 0 auto;
 		ul {
 			height: 100%;
 			display: flex;
@@ -38,7 +43,7 @@ header {
 	.sns {
 		position: absolute;
 		top: 130px;
-		left: 3vw;
+		left: 80px;
 		&::before {
 			content: '';
 			display: block;
