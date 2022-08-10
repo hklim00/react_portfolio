@@ -6,11 +6,11 @@ header {
 	background: transparent;
 	display: flex;
 	justify-content: space-between;
-	padding-right: 20vw;
+	padding-right: 15vw;
 	z-index: 5;
 	h1 {
-		width: 375px;
-		height: 400px;
+		width: 15vw;
+		height: 350px;
 		background: #fff;
 		text-align: center;
 		padding: 50px 0;
@@ -26,7 +26,7 @@ header {
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
-			gap: 40px;
+			gap: 45px;
 			li {
 				a {
 					font: 14px/1 'arial';
@@ -38,7 +38,7 @@ header {
 	.sns {
 		position: absolute;
 		top: 130px;
-		left: 90px;
+		left: 3vw;
 		&::before {
 			content: '';
 			display: block;
@@ -49,7 +49,7 @@ header {
 		}
 		li {
 			color: #c5c5c5;
-			margin-top: 45px;
+			margin-top: 30px;
 		}
 	}
 }
