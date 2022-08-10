@@ -9,8 +9,15 @@ function Location() {
 		level: 3,
 	};
 
+	const markerPosition = option.center;
+
+	const marker = new kakao.maps.Marker({
+		position: markerPosition,
+	});
+
 	useEffect(() => {
 		const map = new kakao.maps.Map(container.current, option);
+		marker.setMap(map);
 	}, []);
 
 	return (
