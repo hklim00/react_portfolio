@@ -1,0 +1,42 @@
+footer {
+	background: #272727;
+	.inner {
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		.con {
+			display: flex;
+			justify-content: space-between;
+
+			h1 {
+				font: bold 16px/1 'Alumni Sans';
+				color: #fff;
+				letter-spacing: 1px;
+			}
+			h2 {
+				font: bold 18px/1 'Alumni Sans';
+				color: #fff;
+				letter-spacing: 1px;
+			}
+			p {
+				color: #8b8b8b;
+			}
+
+			.sns {
+				display: flex;
+				gap: 10px;
+				li {
+					svg {
+						width: 16px;
+						height: 16px;
+						font-size: 12px;
+						padding: 7px;
+						border-radius: 50%;
+						color: #fff;
+						background: #c4a581;
+					}
+				}
+			}
+		}
+	}
+}

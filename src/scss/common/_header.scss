@@ -19,6 +19,7 @@ header {
 		a {
 			font-size: 40px;
 			color: #3d3d3d;
+			font-family: 'Alumni Sans';
 		}
 	}
 	#gnb {
@@ -34,8 +35,9 @@ header {
 			gap: 45px;
 			li {
 				a {
-					font: 14px/1 'arial';
+					font: 14px/1 'Alumni Sans';
 					color: #fff;
+					letter-spacing: 1px;
 				}
 			}
 		}
