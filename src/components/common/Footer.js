@@ -28,6 +28,7 @@ function Footer() {
 					</div>
 					<div>
 						<h2>FOLLOW US</h2>
+						<p>Lorem, ipsum dolor</p>
 						<ul className='sns'>
 							<li>
 								<FontAwesomeIcon icon={faInstagram} />
