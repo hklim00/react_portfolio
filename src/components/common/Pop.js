@@ -1,8 +1,10 @@
-function Pop({ children }) {
+function Pop({ children, setOpen }) {
 	return (
 		<aside className='pop'>
 			<div className='con'>{children}</div>
-			<span className='close'>CLOSE</span>
+			<span className='close' onClick={() => setOpen(false)}>
+				CLOSE
+			</span>
 		</aside>
 	);
 }

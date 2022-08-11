@@ -6,6 +6,7 @@ import Pop from '../common/Pop';
 function Youtube() {
 	const [Videos, setVideos] = useState([]);
 	const [Open, setOpen] = useState(false);
+	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
 		const key = 'AIzaSyBDL1S8asY8CR73ihG02orQB3BdWha5F1A';
@@ -21,7 +22,7 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
-				{Videos.map((vid) => {
+				{Videos.map((vid, idx) => {
 					return (
 						<article key={vid.id}>
 							<div className='inner'>
@@ -29,6 +30,7 @@ function Youtube() {
 									className='pic'
 									onClick={() => {
 										setOpen(true);
+										setIndex(idx);
 									}}>
 									<img src={vid.snippet.thumbnails.high.url} alt='' />
 								</div>
@@ -41,7 +43,14 @@ function Youtube() {
 					);
 				})}
 			</Layout>
-			{Open && <Pop setOpen={setOpen}></Pop>}
+			{Open && (
+				<Pop setOpen={setOpen}>
+					<iframe
+						src={`https://www.youtube.com/embed/${Videos[Index].snippet.resourceId.videoId}`}
+						frameBorder='0'
+						title='Index'></iframe>
+				</Pop>
+			)}
 		</>
 	);
 }
