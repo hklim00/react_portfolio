@@ -15,15 +15,18 @@ function Footer() {
 					<div>
 						<h1>archTec</h1>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla,
-							soluta esse eaque maiores quam doloribus non temporibus cum ad
-							illum.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit Aperiam
+							quod cupiditate eum, iure facere tenetur omnis rerum quaerat
+							Necessitatibus aspernatur dolorem laudantium repudiandae
 						</p>
 					</div>
 					<div>
 						<h2>CONTACT US</h2>
 						<p>Lorem, ipsum dolor</p>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur
+							<br /> adipisicing elit
+						</p>
 						<p>Lorem, ipsum dolor</p>
 					</div>
 					<div>
@@ -45,6 +48,7 @@ function Footer() {
 						</ul>
 					</div>
 				</div>
+				<p className='copy'>&copy; 2022 archTec. All rights reserved.</p>
 			</div>
 		</footer>
 	);
