@@ -5,8 +5,8 @@ function Layout({ children, name }) {
 
 	return (
 		<section className={`content ${name}`}>
-			<figure>
-				<img src={`${path}/img/${name}.jpg`} alt='' />
+			<figure style={{ backgroundImage: `url(${path}/img/${name}.jpg)` }}>
+				{/* <img src={`${path}/img/${name}.jpg`} alt='' /> */}
 				<h1>{name}</h1>
 			</figure>
 			<div className='inner'>{children}</div>

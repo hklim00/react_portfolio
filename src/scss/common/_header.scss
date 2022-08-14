@@ -82,13 +82,17 @@ header.main {
 
 @media screen and (max-width: $web_s) {
 	header {
+		h1 {
+			width: auto;
+			padding: 40px 5vw;
+		}
 		#gnb {
 			padding: 0 5vw;
 			ul {
 				gap: 45px;
 				li {
 					a {
-						font: 400 15px/1 'Oswald';
+						font: 400 14px/1 'Oswald';
 					}
 				}
 			}
@@ -96,7 +100,7 @@ header.main {
 		.sns {
 			position: absolute;
 			top: 130px;
-			left: 80px;
+			left: 4.5vw;
 			&::before {
 				content: '';
 				display: block;
@@ -113,7 +117,22 @@ header.main {
 		}
 	}
 }
+
 @media screen and (max-width: $tablet) {
+	header {
+		h1 {
+			// width: auto;
+			// height: auto;
+			// padding: 40px 5vw;
+			// background: transparent;
+		}
+		#gnb {
+			display: none;
+		}
+		.sns {
+			// display: none;
+		}
+	}
 }
 
 @media screen and (max-width: $mobile) {
