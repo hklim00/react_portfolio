@@ -16,9 +16,10 @@ header {
 		position: absolute;
 		top: 0;
 		left: 0;
+		line-height: 1;
 		a {
 			font-weight: bold;
-			font-size: 35px;
+			font-size: 32px;
 			color: #3d3d3d;
 			letter-spacing: -1px;
 		}
@@ -46,7 +47,7 @@ header {
 	.sns {
 		position: absolute;
 		top: 130px;
-		left: 80px;
+		left: 90px;
 		&::before {
 			content: '';
 			display: block;
@@ -83,8 +84,7 @@ header.main {
 @media screen and (max-width: $web_s) {
 	header {
 		h1 {
-			width: auto;
-			padding: 40px 5vw;
+			width: 280px;
 		}
 		#gnb {
 			padding: 0 5vw;
@@ -100,7 +100,7 @@ header.main {
 		.sns {
 			position: absolute;
 			top: 130px;
-			left: 4.5vw;
+			left: 70px;
 			&::before {
 				content: '';
 				display: block;
@@ -121,16 +121,21 @@ header.main {
 @media screen and (max-width: $tablet) {
 	header {
 		h1 {
-			// width: auto;
-			// height: auto;
-			// padding: 40px 5vw;
-			// background: transparent;
+			width: auto;
+			height: auto;
+			padding: 20px 5vw;
+			text-align: left;
+			background: transparent;
+			a {
+				font-size: 22px;
+				color: #fff;
+			}
 		}
 		#gnb {
 			display: none;
 		}
 		.sns {
-			// display: none;
+			display: none;
 		}
 	}
 }
