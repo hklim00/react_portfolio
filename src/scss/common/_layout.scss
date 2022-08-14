@@ -15,8 +15,12 @@
 			color: #fff;
 			letter-spacing: 0.3em;
 			position: absolute;
-			right: calc((100% - 1280px) / 2);
+			max-width: 1280px;
+			width: 100%;
+			left: 50%;
 			bottom: 150px;
+			transform: translateX(-50%);
+			text-align: right;
 			text-transform: uppercase;
 		}
 	}
@@ -27,4 +31,23 @@
 		margin: 0 auto;
 		padding: 170px 0;
 	}
+}
+@media screen and (max-width: $web_s) {
+	.content {
+		figure {
+			h1 {
+				padding: 0 5vw;
+			}
+		}
+
+		> .inner {
+			padding: 170px 5vw;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+}
+
+@media screen and (max-width: $mobile) {
 }

@@ -36,7 +36,7 @@ header {
 			gap: 45px;
 			li {
 				a {
-					font: 400 16px/1 'Oswald';
+					font: 400 15px/1 'Oswald';
 					color: #fff;
 					letter-spacing: 2px;
 				}
@@ -58,6 +58,7 @@ header {
 		li {
 			color: #c5c5c5;
 			margin-top: 33px;
+			cursor: pointer;
 		}
 	}
 }
@@ -77,4 +78,43 @@ header.main {
 			color: #606060;
 		}
 	}
+}
+
+@media screen and (max-width: $web_s) {
+	header {
+		#gnb {
+			padding: 0 5vw;
+			ul {
+				gap: 45px;
+				li {
+					a {
+						font: 400 15px/1 'Oswald';
+					}
+				}
+			}
+		}
+		.sns {
+			position: absolute;
+			top: 130px;
+			left: 80px;
+			&::before {
+				content: '';
+				display: block;
+				width: 1px;
+				height: 50px;
+				background: #c5c5c5;
+				transform: translateX(7px);
+			}
+			li {
+				color: #c5c5c5;
+				margin-top: 33px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+}
+
+@media screen and (max-width: $mobile) {
 }
