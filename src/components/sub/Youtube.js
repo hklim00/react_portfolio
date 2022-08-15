@@ -13,7 +13,7 @@ function Youtube() {
 	useEffect(() => {
 		const key = 'AIzaSyBDL1S8asY8CR73ihG02orQB3BdWha5F1A';
 		const playlistId = 'PL_RxE5V-zXWKQclKr_-CS9KkMp4xPkcrW';
-		const num = 6;
+		const num = 5;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
 		axios.get(url).then((json) => {
@@ -42,7 +42,10 @@ function Youtube() {
 										<p>{vid.snippet.description.split(' ', 4)}</p>
 										<FontAwesomeIcon
 											icon={faArrowRightLong}
-											onClick={() => setOpen(true)}
+											onClick={() => {
+												setOpen(true);
+												setIndex(idx);
+											}}
 										/>
 									</div>
 								</div>
