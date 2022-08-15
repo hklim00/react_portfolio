@@ -1,6 +1,6 @@
 import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Pop from '../common/Pop';
@@ -40,7 +40,10 @@ function Youtube() {
 									<div className='txt'>
 										<h2>{vid.snippet.title.split(' ', 3)}</h2>
 										<p>{vid.snippet.description.split(' ', 4)}</p>
-										<FontAwesomeIcon icon={faArrowRight} />
+										<FontAwesomeIcon
+											icon={faArrowRightLong}
+											onClick={() => setOpen(true)}
+										/>
 									</div>
 								</div>
 							</article>
