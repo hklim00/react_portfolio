@@ -1,4 +1,6 @@
 import Layout from '../common/Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Pop from '../common/Pop';
@@ -10,7 +12,7 @@ function Youtube() {
 
 	useEffect(() => {
 		const key = 'AIzaSyBDL1S8asY8CR73ihG02orQB3BdWha5F1A';
-		const playlistId = 'PL_RxE5V-zXWLz8bPJ5xi6dsdqg2mnwgPr';
+		const playlistId = 'PL_RxE5V-zXWKQclKr_-CS9KkMp4xPkcrW';
 		const num = 6;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
@@ -22,26 +24,29 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
-				{Videos.map((vid, idx) => {
-					return (
-						<article key={vid.id}>
-							<div className='inner'>
-								<div
-									className='pic'
-									onClick={() => {
-										setOpen(true);
-										setIndex(idx);
-									}}>
-									<img src={vid.snippet.thumbnails.high.url} alt='' />
+				<div className='wrap'>
+					{Videos.map((vid, idx) => {
+						return (
+							<article key={vid.id}>
+								<div className='inner'>
+									<div
+										className='pic'
+										onClick={() => {
+											setOpen(true);
+											setIndex(idx);
+										}}>
+										<img src={vid.snippet.thumbnails.high.url} alt='' />
+									</div>
+									<div className='txt'>
+										<h2>{vid.snippet.title.split(' ', 3)}</h2>
+										<p>{vid.snippet.description.split(' ', 4)}</p>
+										<FontAwesomeIcon icon={faArrowRight} />
+									</div>
 								</div>
-								<div className='txt'>
-									<h2>{vid.snippet.title}</h2>
-									<p>{vid.snippet.description}</p>
-								</div>
-							</div>
-						</article>
-					);
-				})}
+							</article>
+						);
+					})}
+				</div>
 			</Layout>
 			{Open && (
 				<Pop setOpen={setOpen}>
