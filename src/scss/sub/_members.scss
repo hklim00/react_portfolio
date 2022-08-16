@@ -1,0 +1,74 @@
+.Members {
+	> .inner {
+		padding: 170px 0;
+		background: #fff;
+
+		.wrap {
+			width: 100%;
+			max-width: 1280px;
+			margin: 0 auto;
+			background: #fff;
+			padding: 0 5vw;
+			h1 {
+				font: 400 40px/1 'Oswald';
+				text-align: center;
+				color: #212121;
+				letter-spacing: 2px;
+				span {
+					color: #c6a47e;
+				}
+				margin-bottom: 100px;
+			}
+			table {
+				width: 100%;
+				tbody {
+					tr {
+						td {
+							label {
+								display: block;
+								font: 500 12px/1 'Montserrat';
+							}
+							width: 50%;
+							padding: 15px 10px;
+							input[type='text'] {
+								width: 100%;
+								background: #f5f5f5;
+								border: none;
+								outline: none;
+								height: 55px;
+								border-radius: 5px;
+								padding: 0 20px;
+								font: 500 14px/1 'Montserrat';
+							}
+
+							textarea {
+								width: 100%;
+								background: #f5f5f5;
+								border: none;
+								outline: none;
+								height: 200px;
+								border-radius: 5px;
+								resize: none;
+								padding: 20px;
+								font: 500 14px/1 'Montserrat';
+							}
+						}
+						&:last-child {
+							text-align: right;
+							button {
+								background: #c6a47e;
+								border: none;
+								outline: none;
+								height: 55px;
+								border-radius: 25px;
+								padding: 0 30px;
+								color: #fff;
+								font: 500 12px/1 'Montserrat';
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
