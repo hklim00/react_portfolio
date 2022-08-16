@@ -15,44 +15,86 @@ function Members() {
 							<tbody>
 								<tr>
 									<td>
-										<label htmlFor=''>ID</label>
-										<input type='text' placeholder='ID' />
+										<label htmlFor='userid'>ID</label>
+										<input
+											type='text'
+											id='userid'
+											name='userid'
+											placeholder='ID'
+										/>
+										<p className='err'></p>
 									</td>
 									<td>
-										<label htmlFor=''>Email</label>
-										<input type='text' placeholder='Email' />
+										<label htmlFor='email'>Email</label>
+										<input
+											type='text'
+											id='email'
+											name='email'
+											placeholder='Email'
+										/>
+										<p className='err'></p>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<label htmlFor=''>Password</label>
-										<input type='text' placeholder='Password' />
+										<label htmlFor='password'>Password</label>
+										<input
+											type='text'
+											id='password'
+											name='password'
+											placeholder='Password'
+										/>
+										<p className='err'></p>
 									</td>
 									<td>
-										<label htmlFor=''>Re-Password</label>
-										<input type='text' placeholder='Re-Password' />
+										<label htmlFor='password2'>Re-Password</label>
+										<input
+											type='text'
+											id='password2'
+											name='password2'
+											placeholder='Re-Password'
+										/>
+										<p className='err'></p>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<label htmlFor=''>Gender</label>
-										<input type='radio' />
-										<label htmlFor=''></label>
-										<input type='radio' />
+										<label htmlFor='male'>
+											<input type='radio' id='male' name='gender' />
+											male
+										</label>
+										<label htmlFor='female'>
+											<input type='radio' id='female' name='gender' />
+											female
+										</label>
+										<p className='err'></p>
 									</td>
 									<td>
-										<label htmlFor=''>Interests</label>
-										<input type='checkbox' />
-										<label htmlFor=''></label>
-										<input type='checkbox' />
-										<label htmlFor=''></label>
-										<input type='checkbox' />
+										<label htmlFor='musium'>
+											<input type='checkbox' id='musium' name='interests' />
+											musium
+										</label>
+
+										<label htmlFor='liblary'>
+											<input type='checkbox' id='liblary' name='interests' />
+											liblary
+										</label>
+
+										<label htmlFor='hall'>
+											<input type='checkbox' id='hall' name='interests' />
+											hall
+										</label>
+										<p className='err'></p>
 									</td>
 								</tr>
 								<tr>
 									<td colSpan={2}>
-										<label htmlFor=''></label>
-										<textarea name='' id='' placeholder='Comment'></textarea>
+										<label htmlFor='comment'>Comment</label>
+										<textarea
+											name='comment'
+											id='comment'
+											placeholder='Comment'></textarea>
+										<p className='err'></p>
 									</td>
 								</tr>
 								<tr>
