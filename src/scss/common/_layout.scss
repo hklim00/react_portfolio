@@ -15,7 +15,8 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			background: rgba(0, 0, 0, 0.6);
+			background: rgba(0, 0, 0, 0.3);
+			filter: grayscale(0.1) saturate(0.7);
 		}
 		h1 {
 			font: 400 70px/1 'Oswald';
@@ -63,7 +64,7 @@
 				display: block;
 				width: 60%;
 				height: 100%;
-				background: #c6a47e;
+				// background: #c6a47e;
 				position: relative;
 				z-index: 2;
 			}

@@ -1,5 +1,11 @@
 import Layout from '../common/Layout';
 import { useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faPhone,
+	faEnvelope,
+	faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Location() {
 	const { kakao } = window;
@@ -29,17 +35,26 @@ function Location() {
 
 				<div className='box'>
 					<dl>
-						<dt>PHONE</dt>
+						<dt>
+							<FontAwesomeIcon icon={faPhone} />
+							PHONE
+						</dt>
 						<dd>+0 124 564 33-22</dd>
 						<dd>+0 124 564 33-22</dd>
 						<dd>+0 124 564 33-22</dd>
 					</dl>
 					<dl>
-						<dt>EMAIL</dt>
+						<dt>
+							<FontAwesomeIcon icon={faEnvelope} />
+							EMAIL
+						</dt>
 						<dd>archtech@email.com</dd>
 					</dl>
 					<dl>
-						<dt>ADDRESS</dt>
+						<dt>
+							<FontAwesomeIcon icon={faLocationDot} />
+							ADDRESS
+						</dt>
 						<dd>
 							KOREA SEOUL.
 							<br />
