@@ -1,6 +1,21 @@
+import { useState, useEffect } from 'react';
 import Layout from '../common/Layout';
 
 function Members() {
+	const [Val, setVal] = useState({
+		userid: '',
+		password: '',
+		password2: '',
+		email: '',
+		gender: null,
+		interests: null,
+		comments: '',
+	});
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setVal({ ...Val, [name]: value });
+	};
 	return (
 		<Layout name={'Members'}>
 			<div className='wrap'>
@@ -21,6 +36,8 @@ function Members() {
 											id='userid'
 											name='userid'
 											placeholder='ID'
+											value={Val.userid}
+											onChange={handleChange}
 										/>
 										<p className='err'></p>
 									</td>
@@ -31,6 +48,8 @@ function Members() {
 											id='email'
 											name='email'
 											placeholder='Email'
+											value={Val.email}
+											onChange={handleChange}
 										/>
 										<p className='err'></p>
 									</td>
@@ -43,6 +62,8 @@ function Members() {
 											id='password'
 											name='password'
 											placeholder='Password'
+											value={Val.password}
+											onChange={handleChange}
 										/>
 										<p className='err'></p>
 									</td>
@@ -53,6 +74,8 @@ function Members() {
 											id='password2'
 											name='password2'
 											placeholder='Re-Password'
+											value={Val.password2}
+											onChange={handleChange}
 										/>
 										<p className='err'></p>
 									</td>
@@ -89,11 +112,13 @@ function Members() {
 								</tr>
 								<tr>
 									<td colSpan={2}>
-										<label htmlFor='comment'>Comment</label>
+										<label htmlFor='comments'>Comments</label>
 										<textarea
-											name='comment'
-											id='comment'
-											placeholder='Comment'></textarea>
+											name='comments'
+											id='comments'
+											placeholder='Comments'
+											value={Val.comments}
+											onChange={handleChange}></textarea>
 										<p className='err'></p>
 									</td>
 								</tr>
