@@ -18,9 +18,36 @@ function Members() {
 	const check = (value) => {
 		const errs = {};
 
+		const eng = /[a-zA-Z]/;
+		const num = /[0-9]/;
+		const spc = /[~!@#$%^&*()+]/;
+
 		if (value.userid.length < 5) {
-			errs.userid = 'Enter at least 5 characters of ID';
+			errs.userid = 'Enter at least 5 characters';
 		}
+
+		if (value.email.length < 8 || !/@/.test(value.email)) {
+			errs.email = 'Must contain at least 8 characters and @';
+		}
+
+		if (
+			value.password.length < 6 ||
+			!eng.test(value.password) ||
+			!num.test(value.password) ||
+			!spc.test(value.password)
+		) {
+			errs.password =
+				'Include at least 6 characters, English, numbers, and ~!@#$%^&*()+';
+		}
+
+		if (value.password !== value.password2 || !value.password2) {
+			errs.password2 = 'Please enter the same two passwords';
+		}
+
+		if (value.comments.length < 10) {
+			errs.comments = 'Enter at least 10 characters';
+		}
+
 		console.log(errs);
 		return errs;
 	};
@@ -79,7 +106,7 @@ function Members() {
 											value={Val.email}
 											onChange={handleChange}
 										/>
-										<p className='err'></p>
+										<p className='err'>{Err.email}</p>
 									</td>
 								</tr>
 								<tr>
@@ -95,7 +122,7 @@ function Members() {
 											value={Val.password}
 											onChange={handleChange}
 										/>
-										<p className='err'></p>
+										<p className='err'>{Err.password}</p>
 									</td>
 									<td>
 										<label htmlFor='password2' className='hidden'>
@@ -109,7 +136,7 @@ function Members() {
 											value={Val.password2}
 											onChange={handleChange}
 										/>
-										<p className='err'></p>
+										<p className='err'>{Err.password2}</p>
 									</td>
 								</tr>
 								<tr>
@@ -153,7 +180,7 @@ function Members() {
 											placeholder='Comments'
 											value={Val.comments}
 											onChange={handleChange}></textarea>
-										<p className='err'></p>
+										<p className='err'>{Err.comments}</p>
 									</td>
 								</tr>
 								<tr>
