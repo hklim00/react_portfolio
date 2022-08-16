@@ -12,17 +12,41 @@ function Members() {
 		comments: '',
 	});
 
+	const [Err, setErr] = useState({});
+	const [Submit, setSubmit] = useState(false);
+
+	const check = (value) => {
+		const errs = {};
+
+		if (value.userid.length < 5) {
+			errs.userid = 'Enter at least 5 characters of ID';
+		}
+		console.log(errs);
+		return errs;
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setErr(check(Val));
+	};
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setVal({ ...Val, [name]: value });
 	};
+
+	useEffect(() => {
+		console.log(Val);
+		console.log(Err);
+	}, [Err]);
+
 	return (
 		<Layout name={'Members'}>
 			<div className='wrap'>
 				<h1>
 					JOIN <span>MEMBERSHIP</span>
 				</h1>
-				<form action='' id='contact'>
+				<form onSubmit={handleSubmit}>
 					<fieldset>
 						<legend className='hidden'>회원가입 폼 양식</legend>
 						<table>
@@ -30,7 +54,9 @@ function Members() {
 							<tbody>
 								<tr>
 									<td>
-										<label htmlFor='userid'>ID</label>
+										<label htmlFor='userid' className='hidden'>
+											ID
+										</label>
 										<input
 											type='text'
 											id='userid'
@@ -39,10 +65,12 @@ function Members() {
 											value={Val.userid}
 											onChange={handleChange}
 										/>
-										<p className='err'></p>
+										<p className='err'>{Err.userid}</p>
 									</td>
 									<td>
-										<label htmlFor='email'>Email</label>
+										<label htmlFor='email' className='hidden'>
+											Email
+										</label>
 										<input
 											type='text'
 											id='email'
@@ -56,7 +84,9 @@ function Members() {
 								</tr>
 								<tr>
 									<td>
-										<label htmlFor='password'>Password</label>
+										<label htmlFor='password' className='hidden'>
+											Password
+										</label>
 										<input
 											type='text'
 											id='password'
@@ -68,7 +98,9 @@ function Members() {
 										<p className='err'></p>
 									</td>
 									<td>
-										<label htmlFor='password2'>Re-Password</label>
+										<label htmlFor='password2' className='hidden'>
+											Re-Password
+										</label>
 										<input
 											type='text'
 											id='password2'
@@ -112,7 +144,9 @@ function Members() {
 								</tr>
 								<tr>
 									<td colSpan={2}>
-										<label htmlFor='comments'>Comments</label>
+										<label htmlFor='comments' className='hidden'>
+											Comments
+										</label>
 										<textarea
 											name='comments'
 											id='comments'
@@ -124,7 +158,9 @@ function Members() {
 								</tr>
 								<tr>
 									<td colSpan={2}>
-										<button type='submit'>SUBMIT</button>
+										<button type='submit' onClick={() => setSubmit(true)}>
+											SUBMIT
+										</button>
 									</td>
 								</tr>
 							</tbody>
