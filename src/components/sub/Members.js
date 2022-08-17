@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import Layout from '../common/Layout';
 
 function Members() {
+	const history = useHistory();
 	const [Val, setVal] = useState({
 		userid: '',
 		password: '',
@@ -89,8 +91,11 @@ function Members() {
 	};
 
 	useEffect(() => {
-		console.log(Val);
-		console.log(Err);
+		const len = Object.keys(Err).length;
+		if (len === 0 && Submit) {
+			alert('Membership registration is complete. Go to the main page.');
+			history.push('/');
+		}
 	}, [Err]);
 
 	return (
@@ -141,7 +146,7 @@ function Members() {
 											Password
 										</label>
 										<input
-											type='text'
+											type='password'
 											id='password'
 											name='password'
 											placeholder='Password'
@@ -155,7 +160,7 @@ function Members() {
 											Re-Password
 										</label>
 										<input
-											type='text'
+											type='password'
 											id='password2'
 											name='password2'
 											placeholder='Re-Password'
