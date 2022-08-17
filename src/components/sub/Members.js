@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from '../common/Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 
 function Members() {
 	const history = useHistory();
@@ -233,6 +235,7 @@ function Members() {
 									<td colSpan={2}>
 										<button type='submit' onClick={() => setSubmit(true)}>
 											SUBMIT
+											<FontAwesomeIcon icon={faArrowRightLong} />
 										</button>
 									</td>
 								</tr>
