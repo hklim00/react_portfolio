@@ -48,6 +48,14 @@ function Members() {
 			errs.comments = 'Enter at least 10 characters';
 		}
 
+		if (!value.gender) {
+			errs.gender = 'Please choose your gender';
+		}
+
+		if (!value.interests) {
+			errs.interests = 'Please select at least one interest';
+		}
+
 		console.log(errs);
 		return errs;
 	};
@@ -60,6 +68,24 @@ function Members() {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setVal({ ...Val, [name]: value });
+	};
+
+	const handleRadio = (e) => {
+		const { name } = e.target;
+		const isCheck = e.target.checked;
+		setVal({ ...Val, [name]: isCheck });
+	};
+
+	const handleCheck = (e) => {
+		let isCheck = false;
+		const { name } = e.target;
+		const inputs = e.target.parentElement.querySelectorAll('input');
+
+		inputs.forEach((el) => {
+			if (el.checked) isCheck = true;
+		});
+
+		setVal({ ...Val, [name]: isCheck });
 	};
 
 	useEffect(() => {
@@ -141,22 +167,47 @@ function Members() {
 								</tr>
 								<tr>
 									<td>
-										<input type='radio' id='male' name='gender' />
+										<input
+											type='radio'
+											id='male'
+											name='gender'
+											onChange={handleRadio}
+										/>
 										<label htmlFor='male'>male</label>
-										<input type='radio' id='female' name='gender' />
+										<input
+											type='radio'
+											id='female'
+											name='gender'
+											onChange={handleRadio}
+										/>
 										<label htmlFor='female'>female</label>
-										<p className='err'></p>
+										<p className='err'>{Err.gender}</p>
 									</td>
 									<td>
-										<input type='checkbox' id='musium' name='interests' />
+										<input
+											type='checkbox'
+											id='musium'
+											name='interests'
+											onChange={handleCheck}
+										/>
 										<label htmlFor='musium'>musium</label>
 
-										<input type='checkbox' id='gallery' name='interests' />
+										<input
+											type='checkbox'
+											id='gallery'
+											name='interests'
+											onChange={handleCheck}
+										/>
 										<label htmlFor='gallery'>gallery</label>
 
-										<input type='checkbox' id='hall' name='interests' />
+										<input
+											type='checkbox'
+											id='hall'
+											name='interests'
+											onChange={handleCheck}
+										/>
 										<label htmlFor='hall'>hall</label>
-										<p className='err'></p>
+										<p className='err'>{Err.interests}</p>
 									</td>
 								</tr>
 								<tr>
