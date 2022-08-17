@@ -141,31 +141,21 @@ function Members() {
 								</tr>
 								<tr>
 									<td>
-										<label htmlFor='male'>
-											<input type='radio' id='male' name='gender' />
-											male
-										</label>
-										<label htmlFor='female'>
-											<input type='radio' id='female' name='gender' />
-											female
-										</label>
+										<input type='radio' id='male' name='gender' />
+										<label htmlFor='male'>male</label>
+										<input type='radio' id='female' name='gender' />
+										<label htmlFor='female'>female</label>
 										<p className='err'></p>
 									</td>
 									<td>
-										<label htmlFor='musium'>
-											<input type='checkbox' id='musium' name='interests' />
-											musium
-										</label>
+										<input type='checkbox' id='musium' name='interests' />
+										<label htmlFor='musium'>musium</label>
 
-										<label htmlFor='liblary'>
-											<input type='checkbox' id='liblary' name='interests' />
-											liblary
-										</label>
+										<input type='checkbox' id='gallery' name='interests' />
+										<label htmlFor='gallery'>gallery</label>
 
-										<label htmlFor='hall'>
-											<input type='checkbox' id='hall' name='interests' />
-											hall
-										</label>
+										<input type='checkbox' id='hall' name='interests' />
+										<label htmlFor='hall'>hall</label>
 										<p className='err'></p>
 									</td>
 								</tr>
