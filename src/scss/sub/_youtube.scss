@@ -62,7 +62,7 @@
 						padding: 40px 50px;
 						top: 50%;
 						left: 0;
-						background: #f5f5f5;
+						background: rgb(245, 245, 245);
 						transform: translate(50%, -50%);
 						h2 {
 							font: 500 16px/1 'Oswald';
@@ -88,7 +88,7 @@
 				&:nth-of-type(2n) {
 					.inner {
 						.txt {
-							background: #c6a47e;
+							background: rgb(198, 164, 126);
 							h2 {
 								color: #fff;
 							}
@@ -106,4 +106,90 @@
 	}
 }
 @media screen and (max-width: $web_s) {
+	.Youtube {
+		> .inner {
+			.wrap {
+				padding: 70px 5vw;
+				article .inner .txt {
+					padding-right: 70px;
+					p {
+						word-break: break-all;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	.Youtube {
+		> .inner {
+			.wrap {
+				article {
+					.inner {
+						.pic {
+							width: 75%;
+						}
+						.txt {
+							width: 75%;
+							height: 100%;
+							left: 25%;
+							top: 0;
+							transform: translate(0, 0);
+							background: rgb(245, 245, 245, 0.7);
+							p {
+								color: #666;
+							}
+							svg {
+								position: relative;
+								top: auto;
+								right: auto;
+								transform: translateY(0%);
+								margin-top: 20px;
+							}
+						}
+					}
+					&:nth-of-type(2n) {
+						.inner {
+							.txt {
+								background: rgb(198, 164, 126, 0.7);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mo) {
+	.Youtube {
+		> .inner {
+			.wrap {
+				&::after {
+					display: none;
+				}
+				article {
+					.inner {
+						.pic {
+							width: 100%;
+						}
+						.txt {
+							width: 100%;
+							left: 0%;
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mo_s) {
+	.Youtube {
+		> .inner {
+			.wrap article .inner .pic {
+				height: 180px;
+			}
+		}
+	}
 }

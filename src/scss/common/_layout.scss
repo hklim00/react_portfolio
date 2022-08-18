@@ -36,22 +36,12 @@
 
 	> .inner {
 		width: 100%;
-		// max-width: 1280px;
-		// margin: 0 auto;
 		padding: 170px 0;
 	}
 }
 @media screen and (max-width: $web_s) {
-	.content {
-		figure {
-			h1 {
-				padding: 0 5vw;
-			}
-		}
-
-		> .inner {
-			// padding: 170px 5vw;
-		}
+	.content figure h1 {
+		padding: 0 5vw;
 	}
 }
 
@@ -71,22 +61,20 @@
 			h1 {
 				padding: 0 5vw;
 				bottom: 30%;
-				font-size: 8vw;
+				font-size: 7vw;
 			}
 		}
 	}
 }
 
-@media screen and (max-width: $mobile) {
-	.content {
-		figure {
-			h1 {
-				font-size: 10vw;
-			}
-		}
-
-		// > .inner {
-		// 	padding: 150px 5vw;
-		// }
+@media screen and (max-width: $mo) {
+	.content figure h1 {
+		text-align: center;
+		font-size: 8vw;
+	}
+}
+@media screen and (max-width: $mo_s) {
+	.content figure h1 {
+		font-size: 10vw;
 	}
 }

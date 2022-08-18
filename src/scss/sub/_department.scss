@@ -15,6 +15,19 @@
 				width: 80%;
 				display: flex;
 				justify-content: flex-end;
+				overflow: hidden;
+				&::after {
+					content: 'arch';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					font-size: 20em;
+					font-weight: 700;
+					color: #fff;
+					line-height: 0.7;
+					transform: rotate(-90deg) translate(40%, 115%);
+				}
 				.pic {
 					position: absolute;
 					top: 15%;
@@ -34,19 +47,7 @@
 					width: 82%;
 					padding: 100px;
 					background: #f5f5f5;
-					overflow: hidden;
-					&::after {
-						content: 'arch';
-						display: block;
-						position: absolute;
-						bottom: 0;
-						right: 0;
-						font-size: 20em;
-						font-weight: 700;
-						color: #fff;
-						line-height: 0.7;
-						transform: rotate(-90deg) translate(40%, 115%);
-					}
+
 					.text {
 						width: 50%;
 						margin-left: 7%;
@@ -113,7 +114,7 @@
 					flex-wrap: wrap;
 					article {
 						width: 25%;
-						padding: 0 20px;
+						padding: 0 15px;
 						margin-bottom: 50px;
 						.inner {
 							position: relative;
@@ -161,26 +162,139 @@
 				padding: 0 5vw;
 				article {
 					width: 95%;
+					.box .text {
+						width: 70%;
+						margin-left: 10%;
+					}
 				}
 			}
 
 			.wrap {
 				> .inner {
 					padding: 0 5vw;
+					.l_box .text {
+						margin-right: 30px;
+					}
+					.list article {
+						width: calc(100% / 3);
+						.inner .pic {
+							height: 300px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Department {
+		> .inner {
+			.con article {
+				width: 100%;
+			}
+
+			.wrap {
+				> .inner {
 					.l_box {
+						width: 35%;
+					}
+					.list {
+						width: 65%;
+						article {
+							width: 50%;
+							.inner .pic {
+								height: 320px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mo) {
+	.Department {
+		> .inner {
+			padding: 0;
+			.con {
+				padding: 150px 5vw 100px;
+				margin-bottom: 0;
+				background: #f5f5f5;
+				article {
+					display: block;
+					&::after {
+						font-size: 16em;
+						transform: rotate(-90deg) translate(40%, 110%);
+					}
+					.pic {
+						position: relative;
+						height: 300px;
+						top: 0;
+					}
+					.box {
+						width: 100%;
+						padding: 70px 50px;
+						z-index: 3;
+						background: transparent;
 						.text {
-							margin-right: 30px;
+							width: 80%;
+							margin: 0;
+						}
+					}
+				}
+			}
+
+			.wrap {
+				background: #c6a47e;
+				padding: 70px 0 100px;
+				> .inner {
+					display: block;
+					.l_box {
+						width: 100%;
+						margin-bottom: 70px;
+						.text {
+							padding: 0;
 						}
 					}
 					.list {
+						width: 100%;
 						article {
-							width: calc(100% / 3);
+							width: 50%;
 							.inner {
 								.pic {
-									height: 300px;
+									height: 350px;
+									img {
+										object-position: center;
+									}
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mo_s) {
+	.Department {
+		> .inner {
+			.con article .box {
+				padding: 70px 0;
+				.text {
+					width: 100%;
+				}
+			}
+			.wrap > .inner .list article {
+				width: 100%;
+				.inner {
+					.pic {
+						height: 90vw;
+					}
+					.txt {
+						padding: 15px 0;
 					}
 				}
 			}
