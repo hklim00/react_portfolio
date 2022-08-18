@@ -12,7 +12,7 @@ import Visual from './components/main/Visual';
 import Community from './components/sub/Community';
 import Department from './components/sub/Department';
 import Gallery from './components/sub/Gallery';
-import Location from './components/sub/Location';
+import Contact from './components/sub/Contact';
 import Members from './components/sub/Members';
 import Youtube from './components/sub/Youtube';
 
@@ -37,7 +37,7 @@ function App() {
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
-			<Route path='/location' component={Location} />
+			<Route path='/contact' component={Contact} />
 			<Route path='/members' component={Members} />
 
 			<Footer />

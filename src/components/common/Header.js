@@ -28,7 +28,7 @@ function Header({ type }) {
 						<NavLink to='/youtube'>YOUTUBE</NavLink>
 					</li>
 					<li>
-						<NavLink to='/location'>LOCATION</NavLink>
+						<NavLink to='/contact'>CONTACT</NavLink>
 					</li>
 					<li>
 						<NavLink to='/members'>MEMBERS</NavLink>

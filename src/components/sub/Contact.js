@@ -7,7 +7,7 @@ import {
 	faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Location() {
+function Contact() {
 	const { kakao } = window;
 	const container = useRef(null);
 	const option = {
@@ -27,7 +27,7 @@ function Location() {
 	}, []);
 
 	return (
-		<Layout name={'Location'}>
+		<Layout name={'Contact'}>
 			<div className='wrap'>
 				<div className='map'>
 					<div id='map' ref={container}></div>
@@ -67,4 +67,4 @@ function Location() {
 	);
 }
 
-export default Location;
+export default Contact;
