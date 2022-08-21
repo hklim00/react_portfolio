@@ -2,5 +2,124 @@
 	> .inner {
 		max-width: 1280px;
 		margin: 0 auto;
+
+		button {
+			font-size: 12px;
+			text-align: center;
+			border: 0;
+			outline: 0;
+			color: #fff;
+			background: #c5c5c5;
+		}
+
+		.inputBox {
+			width: 100%;
+			margin-bottom: 50px;
+			text-align: center;
+			input {
+				width: 60%;
+				height: 50px;
+				padding: 0 15px;
+				font-size: 14px;
+				margin-bottom: 15px;
+				border: 2px solid #f5f5f5;
+			}
+			textarea {
+				width: 60%;
+				height: 100px;
+				padding: 15px;
+				font-size: 14px;
+				border: 2px solid #f5f5f5;
+				resize: none;
+			}
+			.btns {
+				text-align: center;
+				margin-top: 30px;
+				button {
+					padding: 0 30px;
+					height: 50px;
+					border-radius: 3px;
+					&:nth-of-type(1) {
+						margin-right: 10px;
+					}
+					&:nth-of-type(2) {
+						background: #c6a47e;
+					}
+				}
+			}
+		}
+
+		.showList {
+			border-top: 2px solid #c6a47e;
+			li {
+				position: relative;
+				padding: 50px 0;
+				border-bottom: 2px solid #f5f5f5;
+
+				.editText {
+					input {
+						width: calc(100% - 300px);
+						height: 45px;
+						padding: 0 15px;
+						font-size: 14px;
+						margin-bottom: 15px;
+						border: 2px solid #f5f5f5;
+					}
+					textarea {
+						width: calc(100% - 300px);
+						height: auto;
+						padding: 15px;
+						font-size: 14px;
+						line-height: 1.2;
+						border: 2px solid #f5f5f5;
+						resize: none;
+					}
+				}
+				.btnSet {
+					position: absolute;
+					bottom: 50px;
+					right: 0;
+					button {
+						padding: 0 30px;
+						height: 40px;
+						border-radius: 22px;
+						&:nth-of-type(2) {
+							margin-left: 10px;
+							background: #333;
+							color: #fff;
+						}
+					}
+				}
+
+				.text {
+					h2 {
+						font: 500 32px/1 'Oswald';
+						margin-bottom: 40px;
+					}
+					p {
+						min-height: 40px;
+						font-size: 14px;
+						line-height: 1.4;
+						color: #666;
+						padding-left: 400px;
+					}
+				}
+				.btnSet2 {
+					position: absolute;
+					bottom: 50px;
+					left: 0;
+					button {
+						padding: 0 30px;
+						height: 40px;
+						border-radius: 22px;
+						&:nth-of-type(2) {
+							margin-left: 10px;
+							background: #333;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
 	}
 }

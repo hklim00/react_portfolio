@@ -8,8 +8,19 @@ function Community() {
 	const textareaEdit = useRef(null);
 
 	const getLocalData = () => {
+		const dummyPosts = [
+			{ title: 'Hello5', content: 'Here comes description in detail.' },
+			{ title: 'Hello4', content: 'Here comes description in detail.' },
+			{ title: 'Hello3', content: 'Here comes description in detail.' },
+			{ title: 'Hello2', content: 'Here comes description in detail.' },
+			{ title: 'Hello1', content: 'Here comes description in detail.' },
+		];
 		const data = localStorage.getItem('post');
-		return JSON.parse(data);
+		if (data) {
+			return JSON.parse(data);
+		} else {
+			return dummyPosts;
+		}
 	};
 
 	const [Posts, setPosts] = useState(getLocalData());
@@ -90,11 +101,17 @@ function Community() {
 	return (
 		<Layout name={'Community'}>
 			<div className='inputBox'>
-				<input type='text' ref={input} placeholder='Please enter a title' />
+				<input
+					type='text'
+					ref={input}
+					placeholder='Please enter a title'
+					maxLength={30}
+				/>
 				<textarea
 					name=''
 					id=''
 					ref={textarea}
+					maxLength={200}
 					placeholder='Please enter the contents'></textarea>
 				<div className='btns'>
 					<button onClick={resetForm}>CANCEL</button>
@@ -112,12 +129,14 @@ function Community() {
 											type='text'
 											ref={inputEdit}
 											defaultValue={post.title}
+											maxLength={30}
 										/>
 										<textarea
 											name=''
 											id=''
 											ref={textareaEdit}
-											defaultValue={post.content}></textarea>
+											defaultValue={post.content}
+											maxLength={200}></textarea>
 									</div>
 									<div className='btnSet'>
 										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
@@ -130,9 +149,9 @@ function Community() {
 										<h2>{post.title}</h2>
 										<p>{post.content}</p>
 									</div>
-									<div className='btnSet'>
-										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+									<div className='btnSet2'>
 										<button onClick={() => deletePosts(idx)}>DELETE</button>
+										<button onClick={() => enableUpdate(idx)}>EDIT</button>
 									</div>
 								</>
 							)}
