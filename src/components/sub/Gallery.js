@@ -1,17 +1,19 @@
 import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
+import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const frame = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
-
+	const btns = useRef(null);
 	const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 
 	const [Loading, setLoading] = useState(true);
 	const [EnableClick, setEnableClick] = useState(false);
+	const masonryOptions = { transitionDuration: '.5s' };
 
 	const num = 50;
 	const user = '196144884@N05';
@@ -50,7 +52,12 @@ function Gallery() {
 		}, 1000);
 	};
 
-	const showInterest = () => {
+	const showInterest = (e) => {
+		const btnTop = btns.current.querySelectorAll('button');
+		btnTop.forEach((btn) => {
+			btn.classList.remove('on');
+		});
+		e.target.classList.add('on');
 		if (!EnableClick) return;
 		setLoading(true);
 		frame.current.classList.remove('on');
@@ -59,6 +66,11 @@ function Gallery() {
 	};
 
 	const showUser = (e) => {
+		const btnTop = btns.current.querySelectorAll('button');
+		btnTop.forEach((btn) => {
+			btn.classList.remove('on');
+		});
+		e.target.classList.add('on');
 		if (!EnableClick) return;
 		setLoading(true);
 		frame.current.classList.remove('on');
@@ -83,36 +95,47 @@ function Gallery() {
 
 	return (
 		<Layout name={'Gallery'}>
-			<button user={user} onClick={showUser}>
-				My Gallery
-			</button>
-			<button onClick={showInterest}>interest Gallery</button>
-			<div className='searchBox'>
-				<input
-					type='text'
-					ref={input}
-					onKeyUp={(e) => {
-						if (e.key === 'Enter') showSearch();
-					}}
-				/>
-				<button onClick={showSearch}>Search</button>
+			<div className='gallery_top' ref={btns}>
+				<button user={user} onClick={showUser} className='on'>
+					ARCHITECTURE
+				</button>
+				<button onClick={showInterest}>INTEREST</button>
+				<div className='searchBox'>
+					<input
+						type='text'
+						ref={input}
+						onKeyUp={(e) => {
+							if (e.key === 'Enter') showSearch();
+						}}
+					/>
+					<button onClick={showSearch}>SEARCH</button>
+				</div>
 			</div>
+			{Loading && (
+				<img
+					className='loading'
+					src={process.env.PUBLIC_URL + '/img/loading.gif'}
+					alt=''
+				/>
+			)}
 			<div className='frame' ref={frame}>
-				{Items.map((pic, idx) => {
-					return (
-						<article key={idx}>
-							<div className='inner'>
-								<div className='pic'>
-									<img
-										src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-										alt={pic.title}
-									/>
+				<Masonry elementType={'div'} options={masonryOptions}>
+					{Items.map((pic, idx) => {
+						return (
+							<article key={idx}>
+								<div className='inner'>
+									<div className='pic'>
+										<img
+											src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+											alt={pic.title}
+										/>
+									</div>
+									{/* <h2>{pic.title}</h2> */}
 								</div>
-								<h2>{pic.title}</h2>
-							</div>
-						</article>
-					);
-				})}
+							</article>
+						);
+					})}
+				</Masonry>
 			</div>
 		</Layout>
 	);
