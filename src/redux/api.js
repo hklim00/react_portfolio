@@ -1,5 +1,19 @@
 import axios from 'axios';
 
+export const getMembers = async () => {
+	const url = process.env.PUBLIC_URL + '/DB/members.json';
+	return await axios.get(url);
+};
+
+export const getYoutube = async () => {
+	const key = 'AIzaSyBDL1S8asY8CR73ihG02orQB3BdWha5F1A';
+	const playlistId = 'PL_RxE5V-zXWKQclKr_-CS9KkMp4xPkcrW';
+	const num = 5;
+	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
+
+	return await axios.get(url);
+};
+
 export const getFlickr = async (opt) => {
 	const key = '700ca468bc8ad00386eefdfab82845a1';
 	const method_user = 'flickr.people.getPhotos';

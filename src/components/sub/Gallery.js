@@ -124,7 +124,7 @@ function Gallery() {
 					</Masonry>
 				</div>
 			</Layout>
-			<Pop>
+			<Pop ref={pop}>
 				{Pics.length !== 0 && (
 					<img
 						src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`}

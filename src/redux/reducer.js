@@ -2,9 +2,12 @@ import { combineReducers } from 'redux';
 
 const memberReducer = (state = { members: [] }, action) => {
 	switch (action.type) {
-		case 'SET_MEMBERS':
+		case 'MEMBER_START':
+			return { ...state };
+		case 'MEMBER_SUCCESS':
 			return { ...state, members: action.payload };
-
+		case 'MEMBER_ERROR':
+			return { ...state, members: action.payload };
 		default:
 			return state;
 	}
@@ -12,7 +15,11 @@ const memberReducer = (state = { members: [] }, action) => {
 
 const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
-		case 'SET_YOUTUBE':
+		case 'YOUTUBE_START':
+			return { ...state };
+		case 'YOUTUBE_SUCCESS':
+			return { ...state, youtube: action.payload };
+		case 'YOUTUBE_ERROR':
 			return { ...state, youtube: action.payload };
 		default:
 			return state;
@@ -26,7 +33,7 @@ const flickrReducer = (state = { flickr: [] }, action) => {
 		case 'FLICKR_SUCCESS':
 			return { ...state, flickr: action.payload };
 		case 'FLICKR_ERROR':
-			return state;
+			return { ...state, flikcr: action.payload };
 		default:
 			return state;
 	}
