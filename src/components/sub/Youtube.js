@@ -1,15 +1,12 @@
 import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
 import Pop from '../common/Pop';
-import { useSelector, useDispatch } from 'react-redux';
-import { setYoutube } from '../../redux/action';
+import { useSelector } from 'react-redux';
 
 function Youtube() {
-	const dispatch = useDispatch();
-	const [Open, setOpen] = useState(false);
+	const pop = useRef(null);
 	const [Index, setIndex] = useState(0);
 	const Videos = useSelector((store) => store.youtubeReducer.youtube);
 
@@ -24,7 +21,7 @@ function Youtube() {
 									<div
 										className='pic'
 										onClick={() => {
-											setOpen(true);
+											pop.current.open();
 											setIndex(idx);
 										}}>
 										<img src={vid.snippet.thumbnails.high.url} alt='' />
@@ -35,7 +32,7 @@ function Youtube() {
 										<FontAwesomeIcon
 											icon={faArrowRightLong}
 											onClick={() => {
-												setOpen(true);
+												pop.current.open();
 												setIndex(idx);
 											}}
 										/>
@@ -46,14 +43,14 @@ function Youtube() {
 					})}
 				</div>
 			</Layout>
-			{Open && (
-				<Pop setOpen={setOpen}>
+			<Pop ref={pop}>
+				{Videos.iength !== 0 && (
 					<iframe
 						src={`https://www.youtube.com/embed/${Videos[Index].snippet.resourceId.videoId}`}
 						frameBorder='0'
 						title='Index'></iframe>
-				</Pop>
-			)}
+				)}
+			</Pop>
 		</>
 	);
 }

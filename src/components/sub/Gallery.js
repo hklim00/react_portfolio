@@ -110,7 +110,12 @@ function Gallery() {
 							return (
 								<article key={idx}>
 									<div className='inner'>
-										<div className='pic' onClick={() => setIndex(idx)}>
+										<div
+											className='pic'
+											onClick={() => {
+												setIndex(idx);
+												pop.current.open();
+											}}>
 											<img
 												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
 												alt={pic.title}
