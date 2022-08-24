@@ -71,7 +71,7 @@ function Gallery() {
 	};
 
 	useEffect(() => {
-		dispatch({ type: 'FLICKR_START', Opt });
+		dispatch({ type: 'types.FLICKR.start', Opt });
 	}, [Opt]);
 
 	useEffect(() => {
