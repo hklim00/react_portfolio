@@ -8,8 +8,7 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
 // main
-import Content from './components/main/Content';
-import Visual from './components/main/Visual';
+import Main from './components/main/Main';
 
 // sub
 import Community from './components/sub/Community';
@@ -38,8 +37,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<Header type={'main'} />
-					<Content />
-					<Visual />
+					<Main />
 				</Route>
 
 				<Route path='/'>
