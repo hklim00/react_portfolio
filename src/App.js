@@ -12,10 +12,10 @@ import Main from './components/main/Main';
 
 // sub
 import Community from './components/sub/Community';
-import Department from './components/sub/Department';
+import About from './components/sub/About';
 import Gallery from './components/sub/Gallery';
 import Contact from './components/sub/Contact';
-import Members from './components/sub/Members';
+import Join from './components/sub/Join';
 import Youtube from './components/sub/Youtube';
 
 import './scss/style.scss';
@@ -45,12 +45,12 @@ function App() {
 				</Route>
 			</Switch>
 
-			<Route path='/department' component={Department} />
+			<Route path='/about' component={About} />
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/contact' component={Contact} />
-			<Route path='/members' component={Members} />
+			<Route path='/join' component={Join} />
 
 			<Footer />
 		</>

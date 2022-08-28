@@ -16,7 +16,7 @@ function Header({ type }) {
 			<nav id='gnb'>
 				<ul>
 					<li>
-						<NavLink to='/department'>DEPARTMENT</NavLink>
+						<NavLink to='/about'>ABOUT</NavLink>
 					</li>
 					<li>
 						<NavLink to='/community'>COMMUNITY</NavLink>
@@ -31,7 +31,7 @@ function Header({ type }) {
 						<NavLink to='/contact'>CONTACT</NavLink>
 					</li>
 					<li>
-						<NavLink to='/members'>MEMBERS</NavLink>
+						<NavLink to='/join'>JOIN</NavLink>
 					</li>
 				</ul>
 			</nav>

@@ -1,12 +1,12 @@
 import Layout from '../common/Layout';
 import { useSelector } from 'react-redux';
 
-function Department() {
+function About() {
 	const path = process.env.PUBLIC_URL;
 	const Members = useSelector((store) => store.memberReducer.members);
 
 	return (
-		<Layout name={'Department'}>
+		<Layout name={'About'}>
 			<section className='con'>
 				<article>
 					<div className='pic'>
@@ -63,4 +63,4 @@ function Department() {
 	);
 }
 
-export default Department;
+export default About;

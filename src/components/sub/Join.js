@@ -4,7 +4,7 @@ import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 
-function Members() {
+function Join() {
 	const history = useHistory();
 	const [Val, setVal] = useState({
 		userid: '',
@@ -101,7 +101,7 @@ function Members() {
 	}, [Err]);
 
 	return (
-		<Layout name={'Members'}>
+		<Layout name={'Join'}>
 			<div className='wrap'>
 				<h1>
 					JOIN <span>MEMBERSHIP</span>
@@ -248,4 +248,4 @@ function Members() {
 	);
 }
 
-export default Members;
+export default Join;
