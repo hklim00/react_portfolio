@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faInstagram,
@@ -6,8 +7,12 @@ import {
 	faTwitter,
 	faBehance,
 } from '@fortawesome/free-brands-svg-icons';
+import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import Menu from './Menu';
 
 function Header({ type }) {
+	const menu = useRef(null);
+
 	return (
 		<header className={type}>
 			<h1>
@@ -16,22 +21,34 @@ function Header({ type }) {
 			<nav id='gnb'>
 				<ul>
 					<li>
-						<NavLink to='/about'>ABOUT</NavLink>
+						<NavLink to='/about' activeClassName='on'>
+							ABOUT
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/community'>COMMUNITY</NavLink>
+						<NavLink to='/community' activeClassName='on'>
+							COMMUNITY
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/gallery'>GALLERY</NavLink>
+						<NavLink to='/gallery' activeClassName='on'>
+							GALLERY
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/youtube'>YOUTUBE</NavLink>
+						<NavLink to='/youtube' activeClassName='on'>
+							YOUTUBE
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/contact'>CONTACT</NavLink>
+						<NavLink to='/contact' activeClassName='on'>
+							CONTACT
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/join'>JOIN</NavLink>
+						<NavLink to='/join' activeClassName='on'>
+							JOIN
+						</NavLink>
 					</li>
 				</ul>
 			</nav>
@@ -49,6 +66,12 @@ function Header({ type }) {
 					<FontAwesomeIcon icon={faFacebookF} />
 				</li>
 			</ul>
+			<FontAwesomeIcon
+				className='menuBtn'
+				icon={faBarsStaggered}
+				onClick={() => menu.current.open()}
+			/>
+			<Menu ref={menu} />
 		</header>
 	);
 }

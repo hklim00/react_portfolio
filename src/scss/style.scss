@@ -6,16 +6,23 @@ $tablet: 1023px;
 $mo: 779px;
 $mo_s: 539px;
 
+// color
+$primary: #c6a47e;
+
 // common
 @import 'common/reset';
 @import 'common/header';
+@import 'common/menu';
 @import 'common/footer';
 @import 'common/layout';
 @import 'common/pop';
 
 // main
 @import 'main/visual';
-@import 'main/content';
+@import 'main/main';
+@import 'main/intro';
+@import 'main/pics';
+@import 'main/news';
 
 // sub
 @import 'sub/about';

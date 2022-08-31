@@ -44,7 +44,7 @@ function Youtube() {
 				</div>
 			</Layout>
 			<Pop ref={pop}>
-				{Videos.iength !== 0 && (
+				{Videos.length !== 0 && (
 					<iframe
 						src={`https://www.youtube.com/embed/${Videos[Index].snippet.resourceId.videoId}`}
 						frameBorder='0'

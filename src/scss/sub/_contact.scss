@@ -42,15 +42,15 @@
 					content: 'CONTACT';
 					display: block;
 					position: absolute;
-					bottom: 0;
-					right: 0;
+					bottom: 10%;
+					right: 10%;
 					font: 500 65px/1 'Oswald';
 					color: #fff;
 					line-height: 1;
 					letter-spacing: 0.5em;
 					opacity: 0.2;
-					transform: rotate(-90deg) translate(-5%, 550%);
-					transform-origin: 0 0;
+					transform: rotate(-90deg) translateX(100%);
+					transform-origin: bottom right;
 				}
 				dl {
 					position: relative;

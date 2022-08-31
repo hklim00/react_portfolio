@@ -15,7 +15,7 @@
 				color: #212121;
 				letter-spacing: 2px;
 				span {
-					color: #c6a47e;
+					color: $primary;
 				}
 				margin-bottom: 100px;
 			}
@@ -78,14 +78,14 @@
 										position: absolute;
 										top: 4px;
 										left: 4px;
-										background: #c6a47e;
+										background: $primary;
 										border-radius: 2px;
 										transition: transform 0.28s ease;
 									}
 								}
 								&:checked + label {
 									&::before {
-										border-color: #c6a47e;
+										border-color: $primary;
 										background: #fff;
 									}
 									&::after {
@@ -118,7 +118,7 @@
 							.err {
 								position: absolute;
 								font: 400 12px/1 'Montserrat';
-								color: #c6a47e;
+								color: $primary;
 								bottom: 0;
 								text-indent: 5px;
 							}
@@ -126,7 +126,7 @@
 						&:last-child {
 							text-align: right;
 							button {
-								background: #c6a47e;
+								background: $primary;
 								border: none;
 								outline: none;
 								height: 50px;

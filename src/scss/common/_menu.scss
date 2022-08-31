@@ -1,0 +1,36 @@
+#mGnb {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #272727;
+	padding: 5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+
+	ul {
+		li {
+			a {
+				display: block;
+				font: 500 4vw/1 'Oswald';
+				color: #fff;
+				letter-spacing: 0.3em;
+				margin: 3vw 0;
+				text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555,
+					4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555;
+				transform: translateX(-8px) translateY(-8px);
+			}
+		}
+	}
+	.menuClose {
+		position: absolute;
+		top: 5vw;
+		right: 5vw;
+		color: #fff;
+		font-size: 40px;
+		cursor: pointer;
+	}
+}

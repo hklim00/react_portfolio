@@ -51,7 +51,7 @@
 						color: #fff;
 						font-weight: 500;
 						border-radius: 25px;
-						background: #c6a47e;
+						background: $primary;
 						border: 0;
 						outline: 0;
 					}
@@ -89,7 +89,7 @@
 			justify-content: center;
 
 			.swiper-pagination-current {
-				color: #c6a47e;
+				color: $primary;
 				font: 400 80px/1 'Oswald';
 				letter-spacing: 1px;
 				margin-right: 10px;

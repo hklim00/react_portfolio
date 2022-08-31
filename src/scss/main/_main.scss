@@ -1,0 +1,16 @@
+main {
+	background: #272727;
+	section {
+		position: relative;
+		h2 {
+			font-size: 140px;
+			color: #2c2c2c;
+			opacity: 0.5;
+		}
+		> .inner {
+			width: 100%;
+			max-width: 1280px;
+			margin: 0 auto;
+		}
+	}
+}
