@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay, EffectFade } from 'swiper';
 import 'swiper/css';
@@ -28,7 +30,7 @@ function Visual() {
 	const next = useRef(null);
 
 	return (
-		<section id='visual'>
+		<section id='visual' className='myScroll'>
 			<Swiper
 				modules={[Pagination, Navigation, Autoplay, EffectFade]}
 				autoplay={{ delay: 10000, disableOnInteraction: true }}
@@ -63,10 +65,12 @@ function Visual() {
 					);
 				})}
 				<div ref={prev} className='swiper-navi prev'>
+					<FontAwesomeIcon icon={faArrowLeft} />
 					PREV
 				</div>
 				<div ref={next} className='swiper-navi next'>
 					NEXT
+					<FontAwesomeIcon icon={faArrowRight} />
 				</div>
 			</Swiper>
 		</section>

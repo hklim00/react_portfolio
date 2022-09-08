@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Intro() {
+function Intro({ Scrolled, currentPos }) {
+	const position = Scrolled - currentPos || 0;
 	return (
-		<section id='intro'>
-			<h2>about</h2>
+		<section id='intro' className='myScroll'>
+			<h2 style={{ left: position * 0.5 }}>about</h2>
 			<div className='inner'></div>
 		</section>
 	);

@@ -1,11 +1,16 @@
 main {
 	background: #272727;
 	section {
+		width: 100%;
 		position: relative;
-		h2 {
-			font-size: 140px;
+		overflow: hidden;
+		> h2 {
+			font-size: 180px;
 			color: #2c2c2c;
 			opacity: 0.5;
+			position: absolute;
+			top: 100px;
+			left: 0;
 		}
 		> .inner {
 			width: 100%;

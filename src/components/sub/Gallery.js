@@ -117,7 +117,7 @@ function Gallery() {
 												pop.current.open();
 											}}>
 											<img
-												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`}
 												alt={pic.title}
 											/>
 										</div>
@@ -132,7 +132,7 @@ function Gallery() {
 			<Pop ref={pop}>
 				{Pics.length !== 0 && (
 					<img
-						src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`}
+						src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_h.jpg`}
 						alt={Pics[Index].title}
 					/>
 				)}
